@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0c0c0e;
+  --surface: #141416;
+  --surface-elevated: #1c1c1f;
+  --border: rgba(255, 255, 255, 0.06);
+  --text: #f4f4f5;
+  --text-muted: #8b8b94;
+  --accent: #e8c4a8;
+  --accent-dim: rgba(232, 196, 168, 0.15);
+  --positive: #7dd3a8;
+  --tip: #a8c8e8;
+  --royalty: #d4a8e8;
+  --sale: #e8c4a8;
+  --radius: 14px;
+  --font: "DM Sans", system-ui, sans-serif;
+  --font-display: "Instrument Serif", Georgia, serif;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--accent-dim);
+  color: var(--accent);
+}

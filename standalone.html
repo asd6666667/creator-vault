@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creator Vault · TokenCore</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/index.css" />
+  <link rel="stylesheet" href="/src/App.css" />
+  <style>
+    body { margin: 0; background: #0c0c0e; color: #f4f4f5; font-family: "DM Sans", system-ui, sans-serif; }
+    .app { max-width: 480px; margin: 0 auto; min-height: 100dvh; display: flex; flex-direction: column; padding: 0 20px 100px; }
+    .header { padding: 28px 0 20px; display: flex; justify-content: space-between; gap: 16px; }
+    .brand h1 { font-family: "Instrument Serif", Georgia, serif; font-size: 1.75rem; font-weight: 400; margin: 0; }
+    .brand p { font-size: 0.8rem; color: var(--text-muted); margin: 4px 0 0; }
+    .balance-pill { padding: 10px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; text-align: right; }
+    .balance-pill span { display: block; font-size: 0.65rem; color: var(--text-muted); }
+    .balance-pill strong { color: var(--accent); }
+    .wallet-btn { margin-top: 16px; width: 100%; padding: 12px; border-radius: 14px; background: var(--surface); border: 1px solid var(--border); color: inherit; cursor: pointer; }
+    .wallet-btn.connected { border-color: var(--accent-dim); color: var(--accent); }
+    .actions { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 28px; }
+    .action-card { padding: 16px 10px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; cursor: pointer; color: inherit; }
+    .action-card .icon { font-size: 1.35rem; margin-bottom: 6px; }
+    .action-card span { font-size: 0.72rem; color: var(--text-muted); display: block; }
+    .tabs { display: flex; gap: 4px; padding: 4px; background: var(--surface); border-radius: 12px; margin-bottom: 20px; }
+    .tab { flex: 1; padding: 10px; border: none; border-radius: 9px; background: none; color: var(--text-muted); cursor: pointer; }
+    .tab.active { background: var(--surface-elevated); color: var(--text); }
+    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.65); display: flex; align-items: flex-end; justify-content: center; z-index: 100; padding: 20px; }
+    .overlay.hidden { display: none; }
+    .modal { width: 100%; max-width: 440px; background: var(--surface-elevated); border: 1px solid var(--border); border-radius: 20px; padding: 24px; }
+    .modal h2 { font-family: "Instrument Serif", serif; font-weight: 400; margin: 0 0 8px; }
+    .modal .desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px; }
+    .field { margin-bottom: 12px; }
+    .field label { display: block; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px; }
+    .field input, .field textarea { width: 100%; padding: 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; color: inherit; box-sizing: border-box; }
+    .modal-actions { display: flex; gap: 10px; margin-top: 12px; }
+    .btn-secondary, .btn-primary { flex: 1; padding: 14px; border-radius: 12px; border: none; cursor: pointer; }
+    .btn-secondary { background: var(--surface); border: 1px solid var(--border); color: inherit; }
+    .btn-primary { background: var(--accent); color: #0c0c0e; font-weight: 600; }
+    .toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); padding: 12px 20px; background: var(--surface-elevated); border: 1px solid var(--border); border-radius: 999px; display: none; z-index: 200; }
+    .toast.show { display: block; }
+    .work-card, .fund-row, .funds-summary, .works-list { /* see App.css */ }
+  </style>
+</head>
+<body>
+  <div class="app" id="app"><p style="text-align:center;padding:48px 20px;color:#8b8b94">加载中…</p></div>
+  <div id="overlay" class="overlay hidden"><div class="modal" id="modal"></div></div>
+  <div class="toast" id="toast"></div>
+  <script type="module" src="/js/creatorApp.js"></script>
+</body>
+</html>
