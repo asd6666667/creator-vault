@@ -80,9 +80,12 @@ export default function App() {
   useEffect(() => {
     ensureTcx()
       .then(() => setTcxReady(true))
-      .catch(() => setToast(T.wasmFail))
+      .catch((err) => {
+        console.error("TokenCore init failed:", err);
+        setToast(T.wasmFail);
+      })
       .finally(() => setTcxLoading(false));
-  }, []);
+  }, [showToast]);
 
   const balance = useMemo(
     () => flows.reduce((s, f) => s + f.amount, 0) + works.reduce((s, w) => s + w.earned, 0) * 0.1,

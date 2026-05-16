@@ -6,15 +6,15 @@ import init, {
   export_mnemonic,
   sign_message,
 } from "@consenlabs/tcx-wasm";
+import wasmUrl from "@consenlabs/tcx-wasm/tcx_wasm_bg.wasm?url";
 
 let ready = false;
 
-const ETH_PATH = "m/44'/60'/0'/0/0";
-const WASM_URL = "/tcx-wasm/tcx_wasm_bg.wasm";
+export const ETH_PATH = "m/44'/60'/0'/0/0";
 
 export async function initTcxWasm(): Promise<void> {
   if (ready) return;
-  await init(WASM_URL);
+  await init(wasmUrl);
   ready = true;
 }
 
@@ -29,5 +29,4 @@ export {
   derive_accounts,
   export_mnemonic,
   sign_message,
-  ETH_PATH,
 };

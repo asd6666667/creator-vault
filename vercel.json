@@ -4,9 +4,19 @@
   "framework": "vite",
   "headers": [
     {
-      "source": "/(.*)\\.wasm",
+      "source": "/assets/(.*)\\.wasm",
+      "headers": [
+        { "key": "Content-Type", "value": "application/wasm" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/tcx-wasm/(.*)\\.wasm",
       "headers": [{ "key": "Content-Type", "value": "application/wasm" }]
     }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "handle": "filesystem" },
+    { "source": "/((?!assets/|tcx-wasm/).*)", "destination": "/index.html" }
+  ]
 }
