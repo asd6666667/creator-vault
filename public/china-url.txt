@@ -1,9 +1,9 @@
-国内免 VPN 访问（jsDelivr，推送 main 并等待 GitHub Actions 完成后可用）：
+国内免 VPN 访问（推荐，jsDelivr CDN）：
 
 https://cdn.jsdelivr.net/gh/asd6666667/creator-vault@gh-pages/index.html
 
-Gitee Pages（镜像到 Gitee 后启用 Pages，base 为 /creator-vault/）：
+Gitee Pages（镜像到 Gitee 后执行 npm run build:gitee 并启用 Pages）：
 
 https://<你的Gitee用户名>.gitee.io/creator-vault/
 
-说明：*.vercel.app 在国内常需 VPN；请优先使用上面两个地址。
+说明：*.vercel.app 在国内常需 VPN，请用上面地址。页面已去掉 Google 字体、Unsplash 等国外资源。
