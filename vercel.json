@@ -16,7 +16,6 @@
     }
   ],
   "rewrites": [
-    { "handle": "filesystem" },
-    { "source": "/((?!assets/|tcx-wasm/).*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
